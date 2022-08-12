@@ -18,7 +18,7 @@ class CreateMedicosTable extends Migration
             $table->string('nome', 30);
             $table->char('sexo', 1);
             $table->string('especialidade', 150);
-            $table->enum('funcionarion', ['S', 'N']);
+            $table->enum('funcionario', ['S', 'N']);
             $table->timestamps();
         });
     }

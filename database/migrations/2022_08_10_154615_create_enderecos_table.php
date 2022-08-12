@@ -64,7 +64,7 @@ class CreateEnderecosTable extends Migration
         });
 
         Schema::table('hospitais', function (Blueprint $table){
-            $table->dropForeign('hospitais_id_enderecos_foreign');
+            $table->dropForeign('hospitais_id_endereco_foreign');
             $table->dropColumn('id_endereco');
         });
 
