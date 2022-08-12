@@ -13,7 +13,7 @@ class UpdateConstraintEnderecosTable extends Migration
      */
     public function up()
     {
-        Schema::table('enderecos', function (Blueprint $table){
+        /*Schema::table('enderecos', function (Blueprint $table){
             $table->unsignedBigInteger('id_paciente');
             $table->foreign('id_paciente')->references('id')->on('pacientes');
             $table->unique('id_paciente');
@@ -25,7 +25,7 @@ class UpdateConstraintEnderecosTable extends Migration
             $table->unsignedBigInteger('id_hospital');
             $table->foreign('id_hospital')->references('id')->on('hospitais');
             $table->unique('id_hospital');
-        });
+        });*/
     }
 
     /**
@@ -35,7 +35,7 @@ class UpdateConstraintEnderecosTable extends Migration
      */
     public function down()
     {
-        Schema::table('enderecos', function (Blueprint $table){
+        /*Schema::table('enderecos', function (Blueprint $table){
             $table->dropForeign('enderecos_id_paciente_foreign');
             $table->dropColumn('id_paciente');
 
@@ -44,6 +44,6 @@ class UpdateConstraintEnderecosTable extends Migration
 
             $table->dropForeign('enderecos_id_hospital_foreign');
             $table->dropColumn('id_hospital');
-        });
+        });*/
     }
 }

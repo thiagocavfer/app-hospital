@@ -15,7 +15,7 @@ class CreateHospitaisTable extends Migration
     {
         Schema::create('hospitais', function (Blueprint $table) {
             $table->id();
-            $table->string('nome', 30);
+            $table->string('nome', 50);
             $table->enum('instituicao', ['publica', 'privada']);
             $table->timestamps();
         });
