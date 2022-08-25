@@ -8,14 +8,28 @@ use Illuminate\Database\Eloquent\Model;
 class Hospital extends Model
 {
     use HasFactory;
+
     protected $table = 'hospitais';
+
     protected $fillable= [
-        'nome',
-        'instituicao',
         'id_endereco',
+        'nome',
+        'instituicao',        
         'telefone',
         'email'
     ];
 
+    public function endereco()
+    {
+        return $this->belongsTo(Endereco::class, 'endereco_id');
+    }
+
+    public function consultas()
+    {
+        return $this->hasMany(Consulta::class, 'hospital_id');
+    }
+
 }
-//$h = Hospital::create(['nome'=>'Hospital da Posse', 'instituicao'=>'publica', 'id_endereco'=>'2', 'telefone'=>'(21) 4444-4444', 'email'=>'hospt.sep@email.com']);
+
+
+

@@ -15,3 +15,10 @@ Não havia nada nela.
 
 - Uma boa prática também, na organização dos campos dentro de uma entidade, é colocar as chaves estrangeiras logo após a chave primária da entidade. Realizei essas mudanças também.
 
+**MODELS**
+
+- Reordenei os campos dos atributos "$fillable" para que fiquem na mesma ordem dos campos na tabela. Isso é "perfumaria", mas a coisa fica mais organizada.
+
+- Fiz a devida referência ao "extends" da Model Consulta. Ela estava extendendo de "Models" e essa classe não existe. Extendi da classe Model (Illuminate\Database\Eloquent\Model).
+
+- Criei os métodos "belongsTo" e "hasMany" de todos os relacionamentos das models Consulta, Paciente, Medico e Hospital.
