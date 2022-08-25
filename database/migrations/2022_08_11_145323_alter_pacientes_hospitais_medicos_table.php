@@ -19,12 +19,12 @@ class AlterPacientesHospitaisMedicosTable extends Migration
 
         Schema::table('medicos', function (Blueprint $table){
             $table->string('telefone', 15)->after('especialidade');
-            $table->string('email', 80);
+            $table->string('email', 80)->after('especialidade');
         });
 
         Schema::table('hospitais', function (Blueprint $table){
-            $table->string('telefone', 15);
-            $table->string('email', 80);
+            $table->string('telefone', 15)->after('instituicao');
+            $table->string('email', 80)->after('instituicao');
         });
     }
 

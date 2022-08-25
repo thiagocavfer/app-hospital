@@ -15,18 +15,17 @@ class CreateInternacoesTable extends Migration
     {
         Schema::create('internacoes', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('consulta_id');
             $table->dateTime('entrada');
             $table->integer('quarto');
             $table->dateTime('saida');
             $table->text('observacoes');
-            $table->timestamps();
-        });
+            
+            $table->foreign('consulta_id')->references('id')->on('consultas');
+            $table->unique('consulta_id');
 
-        Schema::table('internacoes', function (Blueprint $table){
-            $table->unsignedBigInteger('id_consulta');
-            $table->foreign('id_consulta')->references('id')->on('consultas');
-            $table->unique('id_consulta');
-        });
+            $table->timestamps();
+        });        
     }
 
     /**
@@ -36,11 +35,6 @@ class CreateInternacoesTable extends Migration
      */
     public function down()
     {
-        Schema::table('internacoes', function (Blueprint $table){
-            $table->dropForeign('internacoes_id_consulta_foreign');
-            $table->dropColumn('id_consulta');
-        });
-
         Schema::dropIfExists('internacoes');
     }
 }
